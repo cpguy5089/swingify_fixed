@@ -113,8 +113,8 @@ def synthesize_no_crossfade(raw_samples, beats, factor):
 
 
 def timestretch(signal, factor):
-    left = librosa.effects.time_stretch(signal[0, :], factor)
-    right = librosa.effects.time_stretch(signal[1, :], factor)
+    left = librosa.effects.time_stretch(signal[0, :], rate=factor)
+    right = librosa.effects.time_stretch(signal[1, :], rate=factor)
     return np.vstack([left, right])
 
 
